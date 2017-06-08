@@ -1,13 +1,13 @@
 {
-    "name": "cmgmyr/messenger",
+    "name": "trinca/laravel-messenger",
     "description": "Simple user messaging tool for Laravel",
     "keywords": ["laravel", "messenger", "messaging", "user messaging"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Chris Gmyr",
-            "email": "cmgmyr@gmail.com",
-            "homepage": "https://github.com/cmgmyr",
+            "name": "Veaceslav Trinca",
+            "email": "support@trincav.net",
+            "homepage": "https://github.com/trinca/laravel-messenger",
             "role": "Developer"
         }
     ],
