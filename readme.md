@@ -4,11 +4,6 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/trvmsg/messenger.svg?style=flat-square)](https://packagist.org/packages/trvmsg/messenger)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
-# Laravel Messenger
-This package will allow you to add a full user messaging system into your Laravel application.
-
-## Leave some feedback
-[How are you using laravel-messenger?](https://github.com/trvmsg/laravel-messenger/issues/55)
 
 ## Features
 * Multiple conversations per user
@@ -23,14 +18,11 @@ This package will allow you to add a full user messaging system into your Larave
 * Group messaging (only participants can see their threads)
 * One to one messaging (private or direct thread)
 
-## Installation (Laravel 4.x)
-Installation instructions for Laravel 4 can be [found here](https://github.com/trvmsg/laravel-messenger/tree/v1).
-
 ## Installation (Laravel 5.x)
 In composer.json:
 
     "require": {
-        "trvmsg/messenger": "~2.0"
+        "trinca/trvmsg": "~2.0"
     }
 
 Run:
@@ -76,12 +68,6 @@ __Note:__ These examples use the [laravelcollective/html](http://laravelcollecti
 ## Example Projects
 * [WIP] [Pusher](https://github.com/trvmsg/laravel-messenger-pusher-demo)
 * [WIP] [Lumen API](https://github.com/trvmsg/lumen-messenger-api)
-
-
-## Contributing? 
-Please format your code before creating a pull-request. This will format all files as specified in `.php_cs`:
-
-    vendor/bin/php-cs-fixer fix .
 
 ## Security
 
