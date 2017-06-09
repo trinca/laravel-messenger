@@ -1,5 +1,5 @@
 {
-    "name": "trinca/trvmsg",
+    "name": "trvmsg/messager",
     "description": "Simple user messaging tool for Laravel",
     "keywords": ["laravel", "messenger", "messaging", "user messaging"],
     "license": "MIT",
