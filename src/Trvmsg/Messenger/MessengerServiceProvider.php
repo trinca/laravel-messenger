@@ -1,11 +1,13 @@
 <?php
 
-namespace Cmgmyr\Messenger;
+namespace Trvmsg\Messenger;
 
-use Cmgmyr\Messenger\Models\Message;
-use Cmgmyr\Messenger\Models\Models;
-use Cmgmyr\Messenger\Models\Participant;
-use Cmgmyr\Messenger\Models\Thread;
+use Trvmsg\Messenger\Models\EventMessage;
+use Trvmsg\Messenger\Models\EventParticipant;
+use Trvmsg\Messenger\Models\Message;
+use Trvmsg\Messenger\Models\Models;
+use Trvmsg\Messenger\Models\Participant;
+use Trvmsg\Messenger\Models\Thread;
 use Illuminate\Support\ServiceProvider;
 
 class MessengerServiceProvider extends ServiceProvider
@@ -17,15 +19,10 @@ class MessengerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                base_path('vendor/cmgmyr/messenger/src/config/config.php') => config_path('messenger.php'),
-            ], 'config');
-
-            $this->publishes([
-                base_path('vendor/cmgmyr/messenger/src/migrations') => base_path('database/migrations'),
-            ], 'migrations');
-        }
+        $this->publishes([
+            base_path('vendor/trvmsg/messenger/src/config/config.php') => config_path('messenger.php'),
+            base_path('vendor/trvmsg/messenger/src/migrations') => base_path('database/migrations'),
+        ]);
 
         $this->setMessengerModels();
         $this->setUserModel();
@@ -39,7 +36,7 @@ class MessengerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            base_path('vendor/cmgmyr/messenger/src/config/config.php'), 'messenger'
+            base_path('vendor/trvmsg/messenger/src/config/config.php'), 'messenger'
         );
     }
 
@@ -50,10 +47,14 @@ class MessengerServiceProvider extends ServiceProvider
         Models::setMessageModel($config->get('messenger.message_model', Message::class));
         Models::setThreadModel($config->get('messenger.thread_model', Thread::class));
         Models::setParticipantModel($config->get('messenger.participant_model', Participant::class));
+        Models::setEventMessageModel($config->get('messenger.event_message_model', EventMessage::class));
+        Models::setEventParticipantModel($config->get('messenger.event_participant_model', EventParticipant::class));
 
         Models::setTables([
             'messages' => $config->get('messenger.messages_table', Models::message()->getTable()),
             'participants' => $config->get('messenger.participants_table', Models::participant()->getTable()),
+            'ev_messages' => $config->get('messenger.event_messages_table', Models::evMessage()->getTable()),
+            'ev_participants' => $config->get('messenger.event_participants_table', Models::evParticipant()->getTable()),
             'threads' => $config->get('messenger.threads_table', Models::thread()->getTable()),
         ]);
     }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Cmgmyr\Messenger\Test;
+namespace Trvmsg\Messenger\Test;
 
 use Carbon\Carbon;
-use Cmgmyr\Messenger\Models\Models;
-use Cmgmyr\Messenger\Models\Participant;
-use Cmgmyr\Messenger\Models\Thread;
+use Trvmsg\Messenger\Models\Models;
+use Trvmsg\Messenger\Models\Participant;
+use Trvmsg\Messenger\Models\Thread;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use ReflectionClass;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Cmgmyr\Messenger\Test;
+namespace Trvmsg\Messenger\Test;
 
 use Carbon\Carbon;
-use Cmgmyr\Messenger\Models\Thread;
-use Cmgmyr\Messenger\Traits\Messagable;
+use Trvmsg\Messenger\Models\Thread;
+use Trvmsg\Messenger\Traits\Messagable;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class MessagableTraitTest extends TestCase

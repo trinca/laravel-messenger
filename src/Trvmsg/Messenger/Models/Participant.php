@@ -1,7 +1,8 @@
 <?php
 
-namespace Cmgmyr\Messenger\Models;
+namespace Trvmsg\Messenger\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -21,14 +22,14 @@ class Participant extends Eloquent
      *
      * @var array
      */
-    protected $fillable = ['thread_id', 'user_id', 'last_read'];
+    protected $fillable = ['thread_id', 'user_id', 'last_read', 'deleted_by_user'];
 
     /**
      * The attributes that should be mutated to dates.
      *
      * @var array
      */
-    protected $dates = ['created_at', 'updated_at', 'deleted_at', 'last_read'];
+    protected $dates = ['created_at', 'updated_at', 'last_read', 'deleted_by_user'];
 
     /**
      * {@inheritDoc}
@@ -44,8 +45,6 @@ class Participant extends Eloquent
      * Thread relationship.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     *
-     * @codeCoverageIgnore
      */
     public function thread()
     {
@@ -56,11 +55,16 @@ class Participant extends Eloquent
      * User relationship.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     *
-     * @codeCoverageIgnore
      */
     public function user()
     {
-        return $this->belongsTo(Models::user(), 'user_id');
+        return $this->belongsTo(Models::classname(User::class), 'user_id');
     }
+
+    public function scopeThreadCategory($query, $categoryId)
+    {
+        return $query->join('sim_messenger_threads' , 'sim_messenger_threads.id', 'sim_messenger_participants.thread_id')
+            ->where('sim_messenger_threads.threads_category_id', $categoryId);
+    }
+
 }

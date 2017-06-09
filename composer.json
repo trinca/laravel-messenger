@@ -1,5 +1,5 @@
 {
-    "name": "trinca/laravel-messenger",
+    "name": "trinca/trvmsg",
     "description": "Simple user messaging tool for Laravel",
     "keywords": ["laravel", "messenger", "messaging", "user messaging"],
     "license": "MIT",
@@ -7,7 +7,7 @@
         {
             "name": "Veaceslav Trinca",
             "email": "support@trincav.net",
-            "homepage": "https://github.com/trinca/laravel-messenger",
+            "homepage": "https://github.com/trinca/trvmsg",
             "role": "Developer"
         }
     ],
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-0": {
-            "Cmgmyr\\Messenger\\": "src/"
+            "Trvmsg\\Messenger\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Cmgmyr\\Messenger\\Test\\": "tests/"
+            "Trvmsg\\Messenger\\Test\\": "tests/"
         }
     },
     "minimum-stability": "stable"

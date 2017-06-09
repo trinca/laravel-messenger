@@ -1,8 +1,8 @@
 <?php
 
-namespace Cmgmyr\Messenger\Test\Stubs\Models;
+namespace Trvmsg\Messenger\Test\Stubs\Models;
 
-use Cmgmyr\Messenger\Models\Message;
+use Trvmsg\Messenger\Models\Message;
 
 class CustomThread extends Message
 {
