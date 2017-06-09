@@ -22,7 +22,7 @@
 In composer.json:
 
     "require": {
-        "trinca/trvmsg": "~2.0"
+        "trvmsg/messenger": "~2.0"
     }
 
 Run:
