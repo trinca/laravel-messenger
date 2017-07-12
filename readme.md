@@ -37,7 +37,7 @@ Add the service provider to `config/app.php` under `providers`:
 
 Publish Assets
 
-	php artisan vendor:publish --provider="Trvmsg\Messenger\MessengerServiceProvider"
+	php artisan vendor:publish --provider="Trvmsg\Messenger\MessengerServiceProvider" --tag="config"
 	
 Update config file to reference your User Model:
 
