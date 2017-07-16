@@ -1,13 +1,17 @@
 <?php
 
 return [
-    'user_model' => 'App\User',
+    'user_model' => App\User::class,
 
-    'message_model' => 'Trvmsg\Messenger\Models\Message',
+    'message_model' => Trvmsg\Messenger\Models\Message::class,
 
-    'participant_model' => 'Trvmsg\Messenger\Models\Participant',
+    'participant_model' => Trvmsg\Messenger\Models\Participant::class,
 
-    'thread_model' => 'Trvmsg\Messenger\Models\Thread',
+    'thread_model' => Trvmsg\Messenger\Models\Thread::class,
+
+    'event_message_model' => Trvmsg\Messenger\Models\EventMessage::class,
+
+    'event_participant_model' => Trvmsg\Messenger\Models\EventParticipant::class,
 
     'event_message_model' => Trvmsg\Messenger\Models\EventMessage::class,
 
