@@ -8,6 +8,10 @@ return [
     'participant_model' => 'Trvmsg\Messenger\Models\Participant',
 
     'thread_model' => 'Trvmsg\Messenger\Models\Thread',
+
+    'event_message_model' => Trvmsg\Messenger\Models\EventMessage::class,
+
+    'event_participant_model' => Trvmsg\Messenger\Models\EventParticipant::class,
     
      /**
      * Define custom database table names.
